@@ -1,0 +1,10 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/auth/node_modules
+/container/node_modules
+/dashboard/node_modules
+/marketing/node_modules
+
+.idea
+
