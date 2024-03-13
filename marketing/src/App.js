@@ -1,20 +1,22 @@
-import React, {Fragment} from 'react'
-import {Switch, Route, BrowserRouter} from "react-router-dom";
-import {StylesProvider} from "@material-ui/core/styles";
+import React, { Fragment } from 'react'
+
+import { Route, Router, Switch } from "react-router-dom";
+
+import { StylesProvider } from "@material-ui/core/styles";
 
 import Landing from './components/Landing'
 import Pricing from './components/Pricing'
 
-export default () => {
+export default ({history}) => {
     return (
         <Fragment>
             <StylesProvider>
-                <BrowserRouter>
+                <Router history={history}>
                     <Switch>
                         <Route exact path={'/pricing'} component={Pricing}/>
                         <Route path={'/'} component={Landing}/>
                     </Switch>
-                </BrowserRouter>
+                </Router>
             </StylesProvider>
         </Fragment>
     )
