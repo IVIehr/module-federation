@@ -7,14 +7,18 @@ import { StylesProvider } from "@material-ui/core/styles";
 import Signup from "./components/SignUp";
 import Signin from "./components/Signin";
 
-export default ({ history }) => {
+export default ({ history, onSignIn }) => {
   return (
     <Fragment>
       <StylesProvider>
         <Router history={history}>
           <Switch>
-            <Route path={"/auth/signin"} component={Signin} />
-            <Route path={"/auth/signup"} component={Signup} />
+            <Route path={"/auth/signin"}>
+              <Signin onSignIn={onSignIn} />
+            </Route>
+            <Route path={"/auth/signup"}>
+              <Signup onSignIn={onSignIn} />
+            </Route>
           </Switch>
         </Router>
       </StylesProvider>
